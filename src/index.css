@@ -1,13 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  font-family: 'Ubuntu';
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	padding: 0 15px;
+}
+
+.box {
+	max-width: 800px;
+	margin: 200px auto;
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.box-title {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.box-items {
+	margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-items svg {
+	cursor: pointer;
+	max-width: 24px;
+}
+
+.box-item {
+	position: relative;;
+}
+
+.box-dropdown {
+	opacity: 0;
+	visibility: hidden;
+	top: 120%;
+	position: absolute;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+    overflow-y: scroll;
+	background-color: #fff;
+	border-radius: 2px;
+	border: 1px solid rgb(177, 177, 177);
+	transition: all .3s;
+}
+
+.box-dropdown.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.box-dropdown div {
+	cursor: pointer;
+	border-bottom: 1px solid rgb(177, 177, 177);
+	padding: 5px 0;
+	margin:  0 0 5px;
+	font-size: 14px;
+}
+
+.box-item input {
+	padding: 0;
+	margin: 0;
+	border: 1px solid rgb(177, 177, 177);
+	border-radius: 2px;
+	padding: 15px 10px 12px;
+}
+
+.box-item span {
+	position: absolute;
+    top: -14px;
+    padding: 5px;
+    background: #fff;
+    left: 7px;
+    font-size: 14px;
+}
+
+.box-item input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.box-item:first-child {
+	margin-right: auto;
+}
+
+.box-currency {
+	display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.box-subtitle {
+	text-align: center;
+	font-weight: 500;
+}
+
+.box-values {
+	display: flex;
+	justify-content: space-between;
+}
+
+.box-result {
+	margin-top: 30px;
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.logo {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+}
+
+.name {
+	font-size: 40px;
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
 }
